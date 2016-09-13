@@ -2,6 +2,12 @@
 public class RationalTest {
 
 	public static void main(String[] args) {
+		Rational a = new Rational(3, 4);
+		Rational b = new Rational(1, 4);
+		
+		System.out.println("a: " + a.toString());
+		System.out.println("b: " + b.toString());
+		
 		Rational rat1 = new Rational();
 		System.out.println("Rat1 Num: " + rat1.getNumerator());
 		System.out.println("Rat1 Den: " + rat1.getDenominator());
