@@ -1,4 +1,14 @@
 
+
+/**
+ * 
+ * Constructor should normalize
+ * 
+ * Constructor should fix signs
+ * 
+ * @author edward
+ *
+ */
 public class Rational {
 
 	private long numerator;
@@ -33,7 +43,7 @@ public class Rational {
 	}
 	
 	public Rational add(Rational rhs) {
-		return new Rational();
+		return this;
 	}
 	
 	public Rational sub(Rational rhs) {
@@ -108,14 +118,26 @@ public class Rational {
 		return -1;
 	}
 	
+	/**
+	 * (long) <double-value>
+	 * @return
+	 */
 	public long longValue() {
 		return -1;
 	}
 	
+	/**
+	 * <long-value> * 1.0F
+	 * @return
+	 */
 	public float floatValue() {
 		return -1;
 	}
 	
+	/**
+	 * <long-value> * 1.0
+	 * @return
+	 */
 	public double doubleValue() {
 		return -1;
 	}
