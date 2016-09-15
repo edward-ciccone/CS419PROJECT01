@@ -43,35 +43,107 @@ public class Rational {
 	}
 	
 	public Rational add(Rational rhs) {
+		long a = this.numerator;
+		long b = this.denominator;
+		long c = rhs.getNumerator();
+		long d = rhs.getDenominator();
+		
+		this.numerator = (a * d) + (b * c);
+		this.denominator = b * d;
+		
 		return this;
 	}
 	
 	public Rational sub(Rational rhs) {
-		return new Rational();
+		long a = this.numerator;
+		long b = this.denominator;
+		long c = rhs.getNumerator();
+		long d = rhs.getDenominator();
+		
+		this.numerator = (a * d) - (b * c);
+		this.denominator = b * d;
+		
+		return this;
 	}
 	
 	public Rational mult(Rational rhs) {
-		return new Rational();
+		long a = this.numerator;
+		long b = this.denominator;
+		long c = rhs.getNumerator();
+		long d = rhs.getDenominator();
+		
+		this.numerator = a * c;
+		this.denominator = b * d;
+		
+		return this;
 	}
 	
 	public Rational div(Rational rhs) {
-		return new Rational();
+		long a = this.numerator;
+		long b = this.denominator;
+		long c = rhs.getNumerator();
+		long d = rhs.getDenominator();
+		
+		this.numerator = a * d;
+		this.numerator = b * c;
+		
+		return this;
 	}
 	
 	public static Rational add(Rational lhs, Rational rhs) {
-		return new Rational();
+		long a = lhs.getNumerator();
+		long b = lhs.getDenominator();
+		long c = rhs.getNumerator();
+		long d = rhs.getDenominator();
+		
+		long num = (a * d) + (b * c);
+		long den = b * d;
+		
+		return new Rational(num, den);
 	}
 	
 	public static Rational sub(Rational lhs, Rational rhs) {
-		return new Rational();
+		long a = lhs.getNumerator();
+		long b = lhs.getDenominator();
+		long c = rhs.getNumerator();
+		long d = rhs.getDenominator();
+		
+		long num = (a * d) - (b * c);
+		long den = b * d;
+		
+		return new Rational(num, den);
 	}
 	
+	/**
+	 * 
+	 * a/b * c/d
+	 * 
+	 * @param lhs
+	 * @param rhs
+	 * @return
+	 */
 	public static Rational mult(Rational lhs, Rational rhs) {
-		return new Rational();
+		long a = lhs.getNumerator();
+		long b = lhs.getDenominator();
+		long c = rhs.getNumerator();
+		long d = rhs.getDenominator();
+		
+		long num = a * c;
+		long den = b * d;
+		
+		return new Rational(num, den);
 	}
 	
 	public static Rational div(Rational lhs, Rational rhs) {
-		return new Rational();
+		long a = lhs.getNumerator();
+		long b = lhs.getDenominator();
+		long c = rhs.getNumerator();
+		long d = rhs.getDenominator();
+		
+		long num = a * d;
+		long den = b * c;
+		
+		return new Rational(num, den);
 	}
 	
 	public boolean equals(Rational rhs) {

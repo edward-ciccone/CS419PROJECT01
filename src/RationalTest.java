@@ -24,6 +24,19 @@ public class RationalTest {
 		Rational rat4 = new Rational(57, 0);
 		System.out.println("Rat4 Num: " + rat4.getNumerator());
 		System.out.println("Rat4 Den: " + rat4.getDenominator());
+		
+		Rational r1 = new Rational(10, 1);
+		Rational r = new Rational(1, 5);
+		Rational statR = Rational.add(r1, r);
+		System.out.println(statR.toString());
+		System.out.println(r.add(r1).toString());
+		System.out.println();
+		int[] list = new int[10];
+		System.out.println(list.length);
+		
+		int[] oldList = {1,2,3};
+		for(int i = 0; i < oldList.length; i++)
+			System.out.print(oldList[i] + " ");
 	}
 
 }
