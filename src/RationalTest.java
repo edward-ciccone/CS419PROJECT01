@@ -56,7 +56,7 @@ public class RationalTest {
 			opStr = lhs.toString() + " * " + rhs.toString();
 			lhs.mult(rhs);
 		} else {
-			opStr = lhs.toString() + " / " + rhs.toString();
+			opStr = lhs.toString() + " \u00F7 " + rhs.toString();
 			lhs.div(rhs);
 		}
 		System.out.printf("%15s%15s%n%n", opStr, lhs.toString());
@@ -69,7 +69,7 @@ public class RationalTest {
 			Rational a = rationals.get(i);
 			Rational b = rationals.get(i+1);
 			Rational temp = Rational.div(a, b);
-			String op = a.toString() + " / " + b.toString();
+			String op = a.toString() + " \u00F7 " + b.toString();
 			String res = temp.toString();
 			System.out.printf("%15s%15s%n", op, res);
 		}
