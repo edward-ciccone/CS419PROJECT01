@@ -63,7 +63,7 @@ public class RationalTest {
 	}
 
 	private static void divStaticRationals() {
-		System.out.println("\n\nAddition: \n\n");
+		System.out.println("\n\nDivision: \n\n");
 
 		System.out.printf("%15s%15s%n", "Operation", "Result");
 		/*
@@ -81,7 +81,7 @@ public class RationalTest {
 	}
 	
 	private static void multStaticRationals() {
-		System.out.println("\n\nAddition: \n\n");
+		System.out.println("\n\nMultiplication: \n\n");
 
 		System.out.printf("%15s%15s%n", "Operation", "Result");
 		/*
@@ -99,7 +99,7 @@ public class RationalTest {
 	}
 	
 	private static void subStaticRationals() {
-		System.out.println("\n\nAddition: \n\n");
+		System.out.println("\n\nSubtraction: \n\n");
 
 		System.out.printf("%15s%15s%n", "Operation", "Result");
 		/*
