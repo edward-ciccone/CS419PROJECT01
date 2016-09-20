@@ -1,5 +1,3 @@
-
-
 /**
  * 
  * Constructor should normalize
