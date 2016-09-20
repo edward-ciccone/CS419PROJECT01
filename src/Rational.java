@@ -31,6 +31,7 @@ public class Rational {
 		} else {
 			this.numerator = n;
 			this.denominator = d;
+			this.normalize();
 		}
 	}
 	
@@ -50,7 +51,8 @@ public class Rational {
 		
 		this.numerator = (a * d) + (b * c);
 		this.denominator = b * d;
-		
+		this.normalize();
+
 		return this;
 	}
 	
@@ -62,7 +64,8 @@ public class Rational {
 		
 		this.numerator = (a * d) - (b * c);
 		this.denominator = b * d;
-		
+		this.normalize();
+
 		return this;
 	}
 	
@@ -74,6 +77,7 @@ public class Rational {
 		
 		this.numerator = a * c;
 		this.denominator = b * d;
+		this.normalize();
 		
 		return this;
 	}
@@ -86,7 +90,8 @@ public class Rational {
 		
 		this.numerator = a * d;
 		this.numerator = b * c;
-		
+		this.normalize();
+
 		return this;
 	}
 	
@@ -147,15 +152,15 @@ public class Rational {
 	}
 	
 	public boolean equals(Rational rhs) {
-		return false;
+		return (this.doubleValue() == rhs.doubleValue());
 	}
 	
 	public boolean less(Rational rhs) {
-		return false;
+		return (this.doubleValue() < rhs.doubleValue());
 	}
 	
 	public boolean greater(Rational rhs) {
-		return false;
+		return (this.doubleValue() > rhs.doubleValue());
 	}
 	
 	/**
@@ -167,7 +172,9 @@ public class Rational {
 	 * @return if this ojbect is == to rhs
 	 */
 	public int compareTo(Rational rhs) {
-		return -1;
+		if(this.greater(rhs)) return 1;
+		else if(this.less(rhs)) return -1;
+		else return 0;
 	}
 	
 	public String toString() {
@@ -177,7 +184,7 @@ public class Rational {
 		int b = (int) denominator;
 		
 		if(a != 0) {
-			if(b == 1) return Integer.toString(a);
+			if(b == 1) return Integer.toString(this.intValue());
 			else if(b > 0) return a + "/" + b;
 		}
 		
@@ -187,7 +194,7 @@ public class Rational {
 	}
 	
 	public int intValue() {
-		return -1;
+		return (int) this.doubleValue();
 	}
 	
 	/**
@@ -195,7 +202,7 @@ public class Rational {
 	 * @return
 	 */
 	public long longValue() {
-		return -1;
+		return (long) this.doubleValue();
 	}
 	
 	/**
@@ -203,7 +210,7 @@ public class Rational {
 	 * @return
 	 */
 	public float floatValue() {
-		return -1;
+		return (float) this.doubleValue();
 	}
 	
 	/**
@@ -211,19 +218,30 @@ public class Rational {
 	 * @return
 	 */
 	public double doubleValue() {
-		return -1;
+		return (this.numerator * 1.0) / (this.denominator * 1.0);
 	}
 	
 	private void normalize() {
-		
+		if(this.denominator < 0) fixsigns();
+		reduce();
 	}
 	
 	private void fixsigns() {
-		
+		this.denominator *= -1;
+		this.numerator *= -1;
 	}
 	
 	private void reduce() {
+		long m = this.numerator;
+		long n = this.denominator;
 		
+		if(m < 0) m *= -1;
+		if(n < 0) n *= -1;
+		
+		long tGCD = gcd(m, n);
+		
+		this.numerator /= tGCD;
+		this.denominator /= tGCD;
 	}
 	
 	private long gcd(long m, long n) {
